@@ -1,0 +1,173 @@
+/**
+ * 
+ */
+package midterm.progpracticum;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * File: OutputWriterTest.java
+ * The <code>OutputWriterTest</code> class runs tests for the OutputWriter class to determine
+ * if the correct output is written and calculated correctly.
+ * 
+ * @author Aaron Schraufnagel
+ * @version Autumn 2013
+ * @see org.junit.Assert
+ * @see java.util.ArrayList
+ * @see java.util.HashMap
+ * @see java.util.List
+ * @see java.util.Map
+ * @see java.util.Set
+ * @see java.util.TreeMap
+ * @see java.util.TreeSet
+ * @see org.junit.Test
+ */
+public class OutputWriterTest {
+    /**
+     * This is a setup method that runs before each test.
+     */
+    @Before
+    public void setUp() {
+        final Set<String> dates = new TreeSet<>();
+        ClinicMaps.setMyDates(dates);
+    }
+    
+    /**
+
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputPatientReport()}
+     * when patientList is empty.
+     */
+    @Test
+    public void testOutputPatientReportEmptyList() {
+        final Map<String, Double> patientMap = new TreeMap<>();
+        patientMap.put("1001", 40.0);
+        ClinicMaps.setMyPatientMap(patientMap);
+        OutputWriter.outputPatientReport();
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputPatientReport()}
+     * when patientMap is empty.
+     */
+    @Test
+    public void testOutputPatientReportEmptyMap() {
+        final List<Patient> patients = new ArrayList<>();
+        patients.add(new Patient(new HomePet(VertClass.MAMMAL, "cat", VertGender.MALE, 6.5,
+                                                9, 12.8, "meow-meow", "Kitty",
+                                                "some other address", "Joanna Petz"), "1001"));
+        PatientList.setMyPatientList(patients);
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputPatientReport()}.
+     */
+    @Test
+    public void testOutputPatientReport() {
+        final List<Patient> patients = new ArrayList<>();
+        patients.add(new Patient(new HomePet(VertClass.MAMMAL, "cat", VertGender.MALE, 6.5,
+                                                9, 12.8, "meow-meow", "Kitty",
+                                                "some other address", "Joanna Petz"), "1001"));
+        PatientList.setMyPatientList(patients);
+        
+        final Map<String, Double> patientMap = new TreeMap<>();
+        patientMap.put("1001", 40.0);
+        ClinicMaps.setMyPatientMap(patientMap);
+        OutputWriter.outputPatientReport();
+    }
+
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputProcedureReport()}
+     * when procedureList and procedureMap are empty.
+     */
+    @Test
+    public void testOutputProcedureReportEmptyListEmptyMap() { }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputProcedureReport()}
+     * when procedureList is empty.
+     */
+    @Test
+    public void testOutputProcedureReportEmptyList() {
+        final Map<String, Integer> procedureMap = new HashMap<>();
+        procedureMap.put("6313", 14);
+        ClinicMaps.setMyProcedureMap(procedureMap);
+        OutputWriter.outputProcedureReport();
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputProcedureReport()}
+     * when procedureMap is empty.
+     */
+    @Test
+    public void testOutputProcedureReportEmptyMap() {
+        final List<Procedure> procedures = new ArrayList<>();
+        procedures.add(new Procedure("Anesthesia", "6313", 40.0));
+        ProcedureList.setMyProcedureList(procedures);
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#outputProcedureReport()}.
+     */
+    @Test
+    public void testOutputProcedureReport() {
+        final List<Procedure> procedures = new ArrayList<>();
+        procedures.add(new Procedure("Anesthesia", "6313", 40.0));
+        final Map<String, Integer> procedureMap = new HashMap<>();
+        ProcedureList.setMyProcedureList(procedures);
+        
+        procedureMap.put("6313", 14);
+        ClinicMaps.setMyProcedureMap(procedureMap);
+        OutputWriter.outputProcedureReport();
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#generateDates()}
+     * when no dates are passed.
+     */
+    @Test
+    public void testGenerateDatesDefault() {
+        final Set<String> dates = new TreeSet<>();
+        ClinicMaps.setMyDates(dates);
+        assertArrayEquals("Incorrect dates were returned!",
+                          new String[]{"??/??/??", "??/??/??"}, OutputWriter.generateDates());
+    }
+
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#generateDates()} when just
+     * one date is passed.
+     */
+    @Test
+    public void testGenerateDatesOne() {
+        final Set<String> dates = new TreeSet<>();
+        dates.add("3/15/13");
+        ClinicMaps.setMyDates(dates);
+        assertArrayEquals("Incorrect dates were returned!",
+                          new String[]{"3/15/13", "3/15/13"}, OutputWriter.generateDates());
+    }
+    
+    /**
+     * Test method for {@link midterm.progpracticum.OutputWriter#generateDates()}.
+     */
+    @Test
+    public void testGenerateDates() {
+        final Set<String> dates = new TreeSet<>();
+        dates.add("3/5/13");
+        dates.add("4/18/13");
+        dates.add("7/19/13");
+        ClinicMaps.setMyDates(dates);
+        assertArrayEquals("Incorrect dates were returned!",
+                          new String[]{"3/5/13", "7/19/13"}, OutputWriter.generateDates());
+    }
+}

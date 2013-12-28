@@ -1,0 +1,109 @@
+/**
+ * Midterm
+ * Autumn 2013, TCSS 305B
+ */
+package midterm.progpracticum;
+
+import java.util.Objects;
+
+/**
+ * File: Procedure.java
+ * The <code>Procedure</code> class represents a procedure that is done on a patient at the
+ * veterinary clinic. The procedure's ID number, its name and its fee are all stored.
+ * 
+ * @author Aaron Schraufnagel
+ * @version Autumn 2013
+ * @see java.util.Objects
+ * 
+ * @custom.inv myProcedure contains only letters, spaces, and apostrophes,
+ *             myProcedureID cannot be null, myFee >= 0
+ */
+public class Procedure implements Comparable<Procedure> {
+    private String myProcedureName;
+    private String myProcedureID;
+    private double myFee;
+    
+    public Procedure(final String aProcedureName, final String aProcedureID,
+                     final double aFee) {
+        if (aProcedureName == null) {
+            throw new NullPointerException("Procedure Name cannot be null");
+        }
+        if (aProcedureID == null) {
+            throw new NullPointerException("Procedure ID number cannot be null");
+        }
+        if (aFee < 0) {
+            throw new IllegalArgumentException("Procedure Fee cannot be negative");
+        }
+        this.myProcedureName = aProcedureName;
+        this.myProcedureID = aProcedureID;
+        this.myFee = aFee;
+    }
+    
+    public Procedure(final Procedure anOther) {
+        this(anOther.myProcedureName, anOther.myProcedureID, anOther.myFee);
+    }
+
+    public String getMyProcedureName() {
+        return myProcedureName;
+    }
+
+    public void setMyProcedureName(String aProcedureName) {
+        if (aProcedureName == null) {
+            throw new NullPointerException("Procedure Name cannot be null");
+        }
+        this.myProcedureName = aProcedureName;
+    }
+
+    public String getMyProcedureID() {
+        return myProcedureID;
+    }
+
+    public void setMyProcedureID(String aProcedureID) {
+        if (aProcedureID == null) {
+            throw new NullPointerException("Procedure ID number cannot be null");
+        }
+        this.myProcedureID = aProcedureID;
+    }
+
+    public double getMyFee() {
+        return myFee;
+    }
+
+    public void setMyFee(double aFee) {
+        if (aFee < 0) {
+            throw new IllegalArgumentException("Procedure Fee cannot be negative");
+        }
+        this.myFee = aFee;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.myProcedureID);
+    }
+
+    @Override
+    public boolean equals(Object anOtherObject) {
+        if (this == anOtherObject) {
+            return true;
+        }
+        if (anOtherObject == null) {
+            return false;
+        }
+        if (!(anOtherObject instanceof Procedure)) {
+            return false;
+        }
+        final Procedure other = (Procedure) anOtherObject;
+        return Objects.equals(this.myProcedureID, other.myProcedureID);
+    }
+
+    @Override
+    public int compareTo(Procedure anOther) {
+        return this.myProcedureID.compareTo(anOther.myProcedureID);
+    }
+    
+    @Override
+    public String toString() {
+        return "\nProcedure ID: " + myProcedureID + "\nProcedure Name: " + myProcedureName
+                + "\nFee: " + myFee;
+    }
+}

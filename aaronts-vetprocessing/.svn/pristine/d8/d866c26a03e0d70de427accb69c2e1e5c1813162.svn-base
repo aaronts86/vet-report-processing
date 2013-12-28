@@ -1,0 +1,76 @@
+/**
+ * Midterm
+ * Autumn 2013, TCSS 305B
+ */
+package midterm.progpracticum;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * File: PatientList.java
+ * The <code>PatientList</code> class contains a List object that holds the values of every
+ * patient in the veterinary clinic's database.
+ * 
+ * @author Aaron Schraufnagel
+ * @version Autumn 2013
+ * @see java.io.File
+ * @see java.io.FileNotFoundException
+ * @see java.util.ArrayList
+ * @see java.util.List
+ * @see java.util.Scanner
+ */
+public class PatientList {
+    private static List<Patient> myPatientList = new ArrayList<>();
+    
+    public static List<Patient> getMyPatientList() {
+        return myPatientList;
+    }
+    
+    public static void setMyPatientList(List<Patient> aPatientList) {
+        myPatientList = aPatientList;
+    }
+
+    @SuppressWarnings("resource")
+    public static void buildPatientList() {
+        try {
+            final Scanner sc = new Scanner(new File("myresources/pets.csv"));
+            sc.nextLine();
+           
+            while (sc.hasNextLine()) {
+                final Scanner patientInfo = new Scanner(sc.nextLine()).useDelimiter(",");
+                
+                final String patientID = patientInfo.next();
+                // local String variable to temporarily hold the class type
+                final String classType = patientInfo.next();
+                // local String variable to temporarily hold the species type
+                final String species = patientInfo.next();
+                // local String variable to temporarily hold the gender
+                final String gender = patientInfo.next();
+                // local double variable to temporarily hold the age
+                final double age = patientInfo.nextDouble();
+                // local double variable to temporarily hold the height
+                final double height = patientInfo.nextDouble();
+                // local double variable to temporarily hold the weight
+                final double weight = patientInfo.nextDouble();
+                // local String variable to temporarily hold the language
+                final String speech = patientInfo.next();
+                final String name = patientInfo.next();
+                final String address = patientInfo.next();
+                final String owner = patientInfo.next();
+                
+                myPatientList.add(new Patient(new HomePet(VertClass.valueOf(classType),
+                                               species, VertGender.valueOf(gender), age,
+                                               height, weight, speech, name, address,
+                                               owner), patientID));
+            }
+            sc.close();
+        } catch (final FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    
+}

@@ -1,0 +1,140 @@
+/**
+ * Aaron Schraufnagel.
+ */
+package midterm.progpracticum;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+/**
+ * File: ClinicMaps.java
+ * The <code>ClinicMaps</code> class holds the values for the patient and procedure maps
+ * and contains a method that populates these maps with the appropriate values.
+ * 
+ * @author Aaron Schraufnagel
+ * @see java.io.File
+ * @see java.io.FileNotFoundException
+ * @see java.util.ArrayList
+ * @see java.util.HashMap
+ * @see java.util.List
+ * @see java.util.Map
+ * @see java.util.Scanner
+ * @see java.util.Set
+ * @see java.util.TreeMap
+ * @see java.util.TreeSet
+ */
+public class ClinicMaps {
+    private static Map<String, Double> myPatientMap;
+    private static Map<String, Integer> myProcedureMap;
+    private static Set<String> myDates = new TreeSet<>();
+    private static int myTotalVisits;
+    
+    public static Map<String, Double> getMyPatientMap() {
+        return myPatientMap;
+    }
+
+    public static Map<String, Integer> getMyProcedureMap() {
+        return myProcedureMap;
+    }
+
+    public static Set<String> getMyDates() {
+        return myDates;
+    }
+
+    public static int getMyTotalVisits() {
+        return myTotalVisits;
+    }
+
+    public static void setMyPatientMap(Map<String, Double> aPatientMap) {
+        myPatientMap = aPatientMap;
+    }
+
+    public static void setMyProcedureMap(Map<String, Integer> aProcedureMap) {
+        myProcedureMap = aProcedureMap;
+    }
+
+    public static void setMyDates(Set<String> aDates) {
+        myDates = aDates;
+    }
+
+    public static void setMyTotalVisits(int aTotalVisits) {
+        myTotalVisits = aTotalVisits;
+    }
+
+    public static void buildMaps() {        
+        myPatientMap = new TreeMap<>();
+        myProcedureMap = new HashMap<>();
+        final List<Patient> patients = new ArrayList<>();
+        final List<Procedure> procedures = new ArrayList<>();
+
+        patients.addAll(PatientList.getMyPatientList());
+        procedures.addAll(ProcedureList.getMyProcedureList());
+        
+        for (Patient patient: patients) {
+            myPatientMap.put(patient.getMyPatientID(), 0.0);
+        }
+        
+        for (Procedure procedure: procedures) {
+            myProcedureMap.put(procedure.getMyProcedureID(), 0);
+        }
+        
+        try {
+            final File directory = new File("myresources");
+            final File[] files = directory.listFiles();
+            for (File visitFiles: files) {
+                if (visitFiles.getName().toLowerCase().endsWith(".txt")) {
+                    final Scanner sc = new Scanner(visitFiles);
+                    if (sc.hasNext()) {
+                        myDates.add(sc.next());    
+                    }
+                    while (sc.hasNextLine()) {
+                        final String line = sc.nextLine();
+                        final String[] results = line.split("\\s");
+                        if (results.length > 0 && results[0].length() > 0
+                                && myPatientMap.containsKey(results[0])) {
+                            myTotalVisits++;
+                            double totalFee = 0.0;
+                            totalFee = myPatientMap.get(results[0]);
+
+                            for (int i = 1; i < results.length; i++) {
+                                for (Procedure procedure: procedures) {
+                                    if (procedure.getMyProcedureID().equals(results[i])
+                                            && myProcedureMap.containsKey(results[i])) {
+                                        totalFee += procedure.getMyFee();
+                                        int totalProcedures = 0;
+                                        totalProcedures = myProcedureMap.get(results[i]);
+                                        totalProcedures++;
+                                        myProcedureMap.put(results[i], totalProcedures);
+                                        break;
+                                    } else if (!myProcedureMap.containsKey(results[i])) {
+                                        System.out.println(results[i]
+                                                + " is not a valid Procedure ID number.");
+                                        break;
+                                    }
+                                }
+                            }
+                            
+                            myPatientMap.put(results[0], totalFee);
+                            
+                        } else if (results.length > 0 && results[0].length() > 0
+                                && !myPatientMap.containsKey(results[0])) {
+                            System.out.println(results[0]
+                                    + " is not a valid Patient ID number.");
+                        }
+                    }
+                    sc.close();
+                }
+            }
+        } catch (final FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

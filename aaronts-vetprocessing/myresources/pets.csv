@@ -1,0 +1,101 @@
+ID,CLASS,SPECIES,GENDER,AGE,HEIGHT,WEIGHT,CALL,NAME,ADDRESS,OWNER
+1000,MAMMAL,dog,FEMALE,9.9,13.5,62.3,woof-woof,Raven,some address,Monika Sobolewska
+1001,MAMMAL,cat,MALE,6.5,9,12.8,meow-meow,Kitty,some other address,Joanna Petz
+1004,BIRD,parakeet,FEMALE,13.53,12.98,15.64,language,Elli  ,address,Annie Tash  
+1008,AMPHIBIAN,eastern newt,MALE,3.9,5.05,15.34,language,Jamal  ,address,Fe Delara  
+1013,BIRD,parrot,FEMALE,5.87,10.52,5.21,language,Calvin  ,address,Rebbecca Tessmaan  
+1016,BIRD,parakeet,MALE,6.71,15.82,2.47,language,Chere  ,address,Davina Holmquist  
+1020,MAMMAL,rabbit,FEMALE,10.96,18.98,7.56,language,Mabel  ,address,Julianne Kibble  
+1025,FISH,betta,MALE,8.83,18.6,12.1,language,Yong  ,address,Luvenia Jacobo  
+1030,MAMMAL,rabbit,FEMALE,3.85,9.88,4.14,language,Qiana  ,address,Maryam Andrade  
+1032,FISH,angel,MALE,11.47,2.82,9.8,language,Renna  ,address,Ouida Sin  
+1034,BIRD,canary,FEMALE,18.49,15.47,14.41,language,Venetta  ,address,Willette Berti  
+1037,BIRD,parakeet,MALE,7.64,11.63,15.94,language,Venetta  ,address,Ike Whitefield  
+1041,MAMMAL,cat,FEMALE,4.77,13.19,5.31,language,Marcie  ,address,Cristal Macfarland  
+1045,MAMMAL,rabbit,MALE,12.68,6.9,10.2,language,Karlyn  ,address,Clement Urrutia  
+1049,AMPHIBIAN,pixie frog,FEMALE,4.53,14.8,11.84,language,Alonzo  ,address,Lura Flood  
+1050,BIRD,cockatiels,MALE,16.34,3.04,6.9,language,Jeraldine  ,address,Ayako Barras  
+1055,REPTILE,water dragon,FEMALE,15.22,10.97,8.5,language,Azzie  ,address,Jamison Penfield  
+1057,BIRD,cockatiels,MALE,11.21,16.08,13.5,language,Annalisa  ,address,Dorthy Guerette  
+1060,REPTILE,box turtle,FEMALE,10.6,1.65,16.6,language,Raguel  ,address,Noella Crespin  
+1064,REPTILE,gecko,MALE,11.32,20.85,15.6,language,Agustina  ,address,Dwana Brimmer  
+1069,REPTILE,box turtle,FEMALE,8.09,11.09,3.79,language,Marcie  ,address,Leonardo Leavens  
+1073,MAMMAL,dog,MALE,18.23,18.26,5.12,language,Roxie  ,address,Rubin Montesano  
+1075,REPTILE,water dragon,FEMALE,17.47,12.96,20.52,language,Cuc  ,address,Leopoldo Lango  
+1076,FISH,angel,MALE,8.85,18.3,6.19,language,Virgie  ,address,Seth Galeana  
+1080,FISH,betta,FEMALE,18.87,19.32,10.67,language,Jeana  ,address,Ling Lonergan  
+1085,BIRD,parakeet,MALE,15.22,14.39,16.09,language,Karlyn  ,address,Britt Vedder  
+1086,FISH,gold,FEMALE,7.26,9.25,11,language,Rhea  ,address,Rebecca Sagers  
+1090,AMPHIBIAN,tiger salamander,MALE,10.92,14.89,6.03,language,Annalisa  ,address,Collette Howze  
+1091,BIRD,parakeet,FEMALE,17.86,17.91,8.13,language,Lien  ,address,Gilberto Trigg  
+1095,MAMMAL,dog,MALE,6.27,17.2,16.76,language,Agustina  ,address,Stanley Kummer  
+1097,FISH,betta,FEMALE,16.4,12.83,9.17,language,Tarra  ,address,Rosamaria Service  
+1098,AMPHIBIAN,cane toad,MALE,4.02,4.2,12.84,language,Marcie  ,address,Kenna Brazee  
+1102,MAMMAL,dog,FEMALE,16.68,6.23,8.74,language,Lien  ,address,Desirae Wamsley  
+1107,BIRD,parakeet,MALE,16.51,3.06,8.51,language,Orpha  ,address,Divina Davids  
+1111,BIRD,parrot,FEMALE,5.75,15.43,7.28,language,Qiana  ,address,Gloria Lowrance  
+1114,FISH,betta,MALE,14.62,10.62,4.67,language,Azzie  ,address,Scotty Kalis  
+1116,REPTILE,gecko,FEMALE,3.2,12.28,6.17,language,Giovanna  ,address,Marsha Jenny  
+1120,BIRD,lovebirds,MALE,7.24,13.85,13.82,language,Raguel  ,address,Kristeen Didonna  
+1121,AMPHIBIAN,tiger salamander,FEMALE,9.52,20.01,6.97,language,Leila  ,address,Suzette Cissell  
+1123,BIRD,parrot,MALE,16.69,12.26,19,language,Jeana  ,address,Asa Jock  
+1124,BIRD,lovebirds,FEMALE,16.67,14.44,9.48,language,Bok  ,address,Peggy Virgen  
+1125,MAMMAL,cat,MALE,9.99,9.58,9.76,language,Janine  ,address,Chanelle Heiner  
+1126,FISH,gold,FEMALE,4.69,19.4,3.9,language,Venetta  ,address,Karrie Wickersham  
+1129,MAMMAL,hamster,MALE,20.31,9.38,3.04,language,Gertrudis  ,address,Brandon Poat  
+1131,AMPHIBIAN,eastern newt,FEMALE,18.54,20.09,10.71,language,Chere  ,address,Edmundo Harth  
+1136,BIRD,canary,MALE,7.87,7.28,9.43,language,Chere  ,address,Jacinta Bankston  
+1138,BIRD,canary,FEMALE,7.1,16.41,18.62,language,Virgie  ,address,Bernarda Suther  
+1140,FISH,guppy,MALE,9.01,1.08,3.57,language,Janine  ,address,Valene Vandegrift  
+1141,FISH,betta,FEMALE,5.37,4.84,13.34,language,Venetta  ,address,Aliza Lute  
+1142,BIRD,parakeet,MALE,12.33,17.34,1.68,language,Marcie  ,address,Sherell Enos  
+1147,REPTILE,green iguana,FEMALE,15.84,15.85,11.34,language,Elli  ,address,Ka Shaver  
+1148,REPTILE,chameleon,MALE,2.22,20.1,7.84,language,Fern  ,address,Saul Stowers  
+1151,MAMMAL,hamster,FEMALE,2.72,12.17,4.79,language,Giovanna  ,address,Ricardo Scheidegger  
+1155,AMPHIBIAN,pacman frog,MALE,6.63,5.84,6.25,language,Chere  ,address,Xiomara Dixon  
+1156,MAMMAL,cat,FEMALE,19.15,15.86,16.77,language,Venetta  ,address,Jacquiline Mckitrick  
+1158,BIRD,cockatiels,MALE,11.81,12.85,8.37,language,Agustina  ,address,Craig Walkup  
+1162,REPTILE,water dragon,FEMALE,16.29,14.09,11.15,language,Martin  ,address,Quentin Alix  
+1165,BIRD,lovebirds,MALE,4.27,14.2,16.82,language,Azzie  ,address,Lyndsay Blackwater  
+1169,AMPHIBIAN,pacman frog,FEMALE,16.67,5.01,5.7,language,Jamal  ,address,Dimple Charon  
+1172,AMPHIBIAN,tiger salamander,MALE,20.56,6.29,13.51,language,Lieselotte  ,address,Milly Rita  
+1175,AMPHIBIAN,cane toad,FEMALE,10.79,13.64,20.4,language,Orpha  ,address,Gay Stgeorge  
+1178,FISH,betta,MALE,1.02,18.4,4.34,language,Halley  ,address,Drema Weglarz  
+1181,BIRD,lovebirds,FEMALE,6.91,7.73,13.86,language,Summer  ,address,Breann Vassel  
+1183,BIRD,canary,MALE,10.75,1.29,17.16,language,Janine  ,address,Dena Chamness  
+1186,BIRD,parrot,FEMALE,5.59,4.48,10.44,language,Bok  ,address,Frank Cash  
+1189,MAMMAL,rabbit,MALE,13.09,19.16,2.74,language,Hayden  ,address,Alphonse Erion  
+1192,BIRD,parrot,FEMALE,16.81,12.93,9.55,language,Tarra  ,address,Madge Wenz  
+1196,MAMMAL,rabbit,MALE,4.66,17.41,17.13,language,Blanca  ,address,Latia Pickrell  
+1201,REPTILE,box turtle,FEMALE,17.35,3.09,2.26,language,Virgie  ,address,Lorita Lewandowski  
+1203,FISH,angel,MALE,14.28,11.95,14.18,language,Blanca  ,address,Delaine Hunger  
+1205,FISH,betta,FEMALE,20.62,10.24,14.2,language,Sharice  ,address,Delois Urias  
+1206,FISH,molly,MALE,8.44,10.47,15.53,language,Jamal  ,address,Kori Minier  
+1208,MAMMAL,cat,FEMALE,11.4,4.75,1.61,language,Lien  ,address,Christopher Ison  
+1211,REPTILE,green iguana,MALE,4.75,18.2,9.8,language,Jeraldine  ,address,Pia Mahn  
+1216,FISH,guppy,FEMALE,16.37,19.13,8.59,language,Jamal  ,address,Crissy Reynosa  
+1219,BIRD,canary,MALE,10.4,11.14,8.62,language,Yong  ,address,Grisel Frazier  
+1220,AMPHIBIAN,tiger salamander,FEMALE,15.12,11.59,17.36,language,Jamal  ,address,Svetlana Ritzer  
+1223,REPTILE,chameleon,MALE,12.3,17.52,14.21,language,Blanca  ,address,Sandi Merchant  
+1226,AMPHIBIAN,pacman frog,FEMALE,8.44,12.73,11,language,Sharice  ,address,Ghislaine Falgout  
+1229,FISH,guppy,MALE,1.84,5.75,7.05,language,Lena  ,address,Hershel Kuiper  
+1232,AMPHIBIAN,eastern newt,FEMALE,7.16,3.12,3.2,language,Roxie  ,address,Cameron Beason  
+1237,REPTILE,chameleon,MALE,8.82,5.54,17.86,language,Halley  ,address,Russ Theel  
+1241,MAMMAL,dog,FEMALE,1.69,18.56,5.65,language,Elli  ,address,Kiyoko Midgley  
+1245,AMPHIBIAN,cane toad,MALE,13.79,1.27,15.97,language,Giovanna  ,address,Sanford Seabaugh  
+1246,REPTILE,water dragon,FEMALE,4.07,20.57,6.88,language,Agustina  ,address,Kecia Fazekas  
+1250,REPTILE,gecko,MALE,20.3,6.01,3.05,language,Chere  ,address,Jenine Holladay  
+1251,BIRD,lovebirds,FEMALE,20.26,6.85,5.86,language,Virgie  ,address,Willie Hommel  
+1253,FISH,guppy,MALE,7.5,19.44,4.81,language,Halley  ,address,Maryln Duer  
+1255,REPTILE,box turtle,FEMALE,6.11,6.76,13.47,language,Lien  ,address,Shawna Cockrill  
+1259,AMPHIBIAN,tiger salamander,MALE,17.29,15.92,14.84,language,Renna  ,address,Felicita Olguin  
+1261,BIRD,canary,FEMALE,8.4,13.53,1.59,language,Kemberly  ,address,Hiroko Hindle  
+1262,FISH,molly,MALE,7.74,4.25,16.66,language,Tarra  ,address,Johnathon Costas  
+1266,BIRD,canary,FEMALE,1.49,20.83,18.65,language,Kemberly  ,address,Felisha Biggers  
+1271,REPTILE,water dragon,MALE,7.34,3.37,2.75,language,Kemberly  ,address,Ila Rocamora  
+1274,REPTILE,gecko,FEMALE,10.81,6.64,15.1,language,Jamal  ,address,Cassy Buggs  
+1277,REPTILE,chameleon,MALE,10.94,14.97,18.25,language,Halley  ,address,Shiela Garst  
+1278,AMPHIBIAN,tiger salamander,FEMALE,7.02,7.22,16.02,language,Azzie  ,address,Isaias Steverson  
+1280,FISH,angel,MALE,19.01,4.18,5.33,language,Russ  ,address,Suzanne Madrid  
+1283,FISH,molly,FEMALE,11.64,17.27,7.27,language,Elsy  ,address,Mamie Dileo  
+1288,AMPHIBIAN,eastern newt,MALE,1.99,8.13,16.81,language,Blanca  ,address,Tennille Macey  

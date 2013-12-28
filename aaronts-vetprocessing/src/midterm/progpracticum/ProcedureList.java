@@ -1,0 +1,57 @@
+/**
+ * Aaron Schraufnagel.
+ */
+package midterm.progpracticum;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * File: ProcedureList.java
+ * The <code>ProcedureList</code> class contains a List object that holds the values of every
+ * procedure that can be done on a patient at the veterinary clinic.
+ * 
+ * @author Aaron Schraufnagel
+ * @see java.io.File
+ * @see java.io.FileNotFoundException
+ * @see java.util.ArrayList
+ * @see java.util.List
+ * @see java.util.Scanner
+ * 
+ * @custom.inv None
+ */
+public class ProcedureList {
+    private static List<Procedure> myProcedureList = new ArrayList<>();
+    
+    public static List<Procedure> getMyProcedureList() {
+        return myProcedureList;
+    }
+    
+    public static void setMyProcedureList(List<Procedure> aProcedureList) {
+        myProcedureList = aProcedureList;
+    }
+
+    @SuppressWarnings("resource")
+    public static void buildProcedureList() {
+        try {
+            final Scanner sc = new Scanner(new File("myresources/procedures.csv"));
+            sc.nextLine();
+           
+            while (sc.hasNextLine()) {
+                final Scanner procedureInfo = new Scanner(sc.nextLine()).useDelimiter(",");
+                
+                final String procedureID = procedureInfo.next();
+                final String name = procedureInfo.next();
+                final double fee = procedureInfo.nextDouble();
+                
+                myProcedureList.add(new Procedure(name, procedureID, fee));
+            }
+            sc.close();
+        } catch (final FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
